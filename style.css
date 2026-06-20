@@ -222,86 +222,188 @@ nav ul li a:hover {
 }
 
 /* Education section */
+
 #education {
-    padding-bottom: 80px;
+    padding: 90px 8%;
+    background-color: #f8fafc;
     box-sizing: border-box;
 }
 
-.education-bento-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+.education-interface-wrapper {
+    display: flex;
+    gap: 40px;
     max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
+    margin: 40px auto 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    border: 1px solid #e2e8f0;
 }
 
-.edu-bento-card {
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 30px;
+/* Sidebar Tab Columns */
+.edu-navigation-tabs {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-height: 250px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: 0.4s;
+    gap: 12px;
+    width: 320px;
+    min-width: 320px;
+    border-right: 2px solid #f1f5f9;
+    padding-right: 20px;
 }
 
-.large-span {
-    grid-column: span 2;
-}
-
-.edu-bento-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
-    border-color: #d1d5db;
-}
-
-.edu-bento-card .detail-badge {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.75rem;
+.edu-tab-btn {
+    background: transparent;
+    border: none;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #111827; 
-    margin-bottom: 12px;
-    display: block;
+    color: #64748b;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.edu-bento-card .item-name {
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 1.35rem;
+.edu-tab-btn:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding-left: 25px;
+}
+
+.edu-tab-btn.active {
+    background-color: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* Panel Deck Control Base */
+.edu-content-deck {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.edu-display-card {
+    display: none; 
+    width: 100%;
+    animation: fadePanelIn 0.5s ease forward;
+}
+
+/* Desktop toggle control helper class */
+.edu-display-card.active-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadePanelIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Decorative Design Badges */
+.edu-tag-label {
+    align-self: flex-start;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #111827;
-    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+.cert-tag { background: #ecfdf5; color: #059669; }
+.higher-tag { background: #eff6ff; color: #2563eb; }
+.school-tag { background: #f5f3ff; color: #7c3aed; }
+
+.edu-institution-title {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #0f172a;
+    margin: 0 0 16px 0;
     line-height: 1.3;
 }
 
-.edu-bento-card .sub-text {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+.edu-description-text {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0 0 30px 0;
+}
+
+.edu-card-meta {
     font-size: 0.95rem;
-    line-height: 1.5;
-    color: #4b5563; 
-    margin: 0 auto 20px 0;
+    font-weight: 500;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 12px 20px;
+    border-radius: 10px;
+    align-self: flex-start;
+    border: 1px dashed #e2e8f0;
 }
 
-.card-footer {
-    margin-top: auto;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.8rem;
-    color: #6b7280;
-}
+@media (max-width: 991px) {
+    #education {
+        padding: 60px 4%;
+    }
 
-.divider-top {
-    border-top: 1px solid #f3f4f6;
-    padding-top: 15px;
-}
+    .education-interface-wrapper {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 0;
+    }
 
+    /* Completely hide navigation buttons on mobile to avoid boring list clutter */
+    .edu-navigation-tabs {
+        display: none;
+    }
+
+    .edu-content-deck {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+    }
+
+    /* Transform cards into eye-catching standalone blocks on mobile */
+    .edu-display-card {
+        display: flex !important; 
+        flex-direction: column;
+        background: #ffffff;
+        padding: 28px;
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        border-top: 5px solid #0f172a; 
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Accent color configurations unique to item positions */
+    .edu-display-card:nth-child(1) { border-top-color: #059669; }
+    .edu-display-card:nth-child(2) { border-top-color: #2563eb; }
+    .edu-display-card:nth-child(3),
+    .edu-display-card:nth-child(4),
+    .edu-display-card:nth-child(5) { border-top-color: #7c3aed; }
+
+    .edu-display-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .edu-institution-title {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .edu-description-text {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+}
 /* SERVICES SECTION */
 #services {
     padding: 80px 8%;

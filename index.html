@@ -80,61 +80,66 @@
         </div> 
     </div>
 </section>
-<section id="education">
-    <h1 class="title">Education</h1>
-    
-    <div class="education-bento-container">
-        <!-- Card 1: CMI London (Large Block) -->
-        <div class="edu-bento-card large-span">
-            <span class="detail-badge">Professional Certification</span>
-            <h3 class="item-name">Chartered Management Institute (CMI), London</h3>
-            <p class="sub-text">Business Education Certification focused on strategic leadership and professional management excellence within global corporate environments.</p>
-            <div class="card-footer">
-                <span class="footer-meta">London, United Kingdom</span>
-            </div>
-        </div>
+<!-- UPDATED MODERN EDUCATION SECTION -->
+    <section id="education">
+        <h1 class="title">Education</h1>
         
-        <!-- Card 2: Calicut University -->
-        <div class="edu-bento-card">
-            <span class="detail-badge">Higher Studies</span>
-            <h3 class="item-name">University of Calicut</h3>
-            <p class="sub-text">Higher Education Programs specializing in academic research and comprehensive knowledge development.</p>
-            <div class="card-footer divider-top">
-                <span class="footer-meta">Graduate Program</span>
+        <div class="education-interface-wrapper">
+            <!-- Left Navigation Tabs (Visible on Desktop) -->
+            <div class="edu-navigation-tabs">
+                <button class="edu-tab-btn active" onclick="switchEduTab(event, 'cert-cmi')">Professional Certification</button>
+                <button class="edu-tab-btn" onclick="switchEduTab(event, 'edu-calicut')">Higher Studies</button>
+                <button class="edu-tab-btn" onclick="switchEduTab(event, 'edu-ssm')">Higher Secondary</button>
+                <button class="edu-tab-btn" onclick="switchEduTab(event, 'edu-gmup')">Upper Primary</button>
+                <button class="edu-tab-btn" onclick="switchEduTab(event, 'edu-amlp')">Lower Primary</button>
+            </div>
+
+            <!-- Content Display Deck (Converts to scrolling cards on Mobile Viewports) -->
+            <div class="edu-content-deck">
+                
+                <!-- Card 1 -->
+                <div id="cert-cmi" class="edu-display-card active-panel">
+                    <span class="edu-tag-label cert-tag">Professional Certification</span>
+                    <h3 class="edu-institution-title">Chartered Management Institute (CMI), London</h3>
+                    <p class="edu-description-text">Business Education Certification focused on strategic leadership and professional management excellence within global corporate environments.</p>
+                    <div class="edu-card-meta">📍 London, United Kingdom</div>
+                </div>
+
+                <!-- Card 2 -->
+                <div id="edu-calicut" class="edu-display-card">
+                    <span class="edu-tag-label higher-tag">Higher Studies</span>
+                    <h3 class="edu-institution-title">University of Calicut</h3>
+                    <p class="edu-description-text">Higher Education Programs specializing in academic research and comprehensive knowledge development.</p>
+                    <div class="edu-card-meta">🎓 Graduate Program</div>
+                </div>
+
+                <!-- Card 3 -->
+                <div id="edu-ssm" class="edu-display-card">
+                    <span class="edu-tag-label school-tag">Higher Secondary</span>
+                    <h3 class="edu-institution-title">SSM Higher Secondary School</h3>
+                    <p class="edu-description-text">HSE Certification. Focus on science and mathematics foundation for technical career pathways.</p>
+                    <div class="edu-card-meta">📍 Theyyalingal</div>
+                </div>
+
+                <!-- Card 4 -->
+                <div id="edu-gmup" class="edu-display-card">
+                    <span class="edu-tag-label school-tag">Upper Primary</span>
+                    <h3 class="edu-institution-title">Kottathangadi GMUP School</h3>
+                    <p class="edu-description-text">Primary Education focused on foundational literacy, logic, and early critical thinking skills.</p>
+                    <div class="edu-card-meta">📍 Local District</div>
+                </div>
+
+                <!-- Card 5 -->
+                <div id="edu-amlp" class="edu-display-card">
+                    <span class="edu-tag-label school-tag">Lower Primary</span>
+                    <h3 class="edu-institution-title">Kaduvallur AMLP School</h3>
+                    <p class="edu-description-text">Early Education. Nurturing basic cognitive abilities and initial social development in a structured environment.</p>
+                    <div class="edu-card-meta">📍 Local District</div>
+                </div>
+
             </div>
         </div>
-        
-        <!-- Card 3: SSM Higher Secondary -->
-        <div class="edu-bento-card">
-            <span class="detail-badge">Higher Secondary</span>
-            <h3 class="item-name">SSM Higher Secondary School</h3>
-            <p class="sub-text">HSE Certification. Focus on science and mathematics foundation for technical career pathways.</p>
-            <div class="card-footer">
-                <span class="footer-meta">Thayalingal</span>
-            </div>
-        </div>
-        
-        <!-- Card 4: Kotathangadi GMUP -->
-        <div class="edu-bento-card">
-            <span class="detail-badge">Upper Primary</span>
-            <h3 class="item-name">Kotathangadi GMUP School</h3>
-            <p class="sub-text">Primary Education focused on foundational literacy, logic, and early critical thinking skills.</p>
-            <div class="card-footer">
-                <span class="footer-meta">Local District</span>
-            </div>
-        </div>
-        
-        <!-- Card 5: Kaduvalur AMLP -->
-        <div class="edu-bento-card">
-            <span class="detail-badge">Lower Primary</span>
-            <h3 class="item-name">Kaduvalur AMLP School</h3>
-            <p class="sub-text">Early Education. Nurturing basic cognitive abilities and initial social development in a structured environment.</p>
-            <div class="card-footer">
-                <span class="footer-meta">Local District</span>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
     <section id="services">
         <h1 class="title">Services</h1>
         <div class="services-box">
@@ -153,27 +158,27 @@
                 tailored for publications and digital media.</p>
             </div>
             <div class="card">
-                <img src="journalism.jpeg">
+                <img src="film.jpeg" alt="documentary">
                 <h2>Documentry & Docufiction Filmmaking</h2>
                 <p>Specialized in visual storytelling through both factual and hybrid formats, this service blends real-life documentation
                  with creative narration. It focuses on producing impactful films that highlight social issues,
                  human experiences, and meaningful narratives with cinematic expression.</p>
             </div>
             <div class="card">
-                <img src="journalism.jpeg" alt="cartoon">
+                <img src="cartoon.jpeg" alt="cartoon">
                 <h2>Illustration and Cartoon Design</h2>
                 <p>Creative visual communication through illustrations and cartoons that simplify complex ideas and enhance storytelling.
                 This service combines artistic expression with conceptual thinking to produce engaging visuals for media, 
                 publications, and digital platforms.</p>
             </div>
             <div class="card">
-                <img src="editing.jpeg" alt="story">
+                <img src="social.jpeg" alt="story">
                 <h2>Social Awareness Content Creation </h2>
                 <p>Focused on creating impactful content that highlights social issues and encourages awareness and change. This service uses storytelling, visuals, 
                 and media strategies to communicate important messages that inspire understanding and action.</p>
             </div>
             <div class="card">
-                <img src="journalism.jpeg">
+                <img src="story.jpeg">
                 <h2>Story development & Script Writing</h2>
                 <p>This service involves building strong narratives from concept to script, including character development, plot structuring, and dialogue writing. 
                 It is tailored for films, documentaries, and digital content, ensuring engaging and well-paced storytelling.</p>
@@ -395,6 +400,14 @@
     <p>Info. Support. Marketing</p>
 </footer>
 <script>
+   function switchEduTab(event, targetPanelId) {
+    const tabButtons = document.querySelectorAll('.edu-tab-btn');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    const displayPanels = document.querySelectorAll('.edu-display-card');
+    displayPanels.forEach(panel => panel.classList.remove('active-panel'));
+    event.currentTarget.classList.add('active');
+    document.getElementById(targetPanelId).classList.add('active-panel');
+}
     function toggleMenu(){
         document.getElementById("menu").classList.toggle("active");
     }
