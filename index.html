@@ -349,36 +349,40 @@
         </div>
     </section>
 <section id="contact">
-        <h1 class="title">Contact Me</h1>
-        <table>
-            <tr>
+    <h1 class="title">Contact Me</h1>
+    
+    <div class="contact-form-container">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="email" required>
+            </div>
+        </div>
 
-                <td>Name</td>
-                <td>Email</td>
-            </tr>
-            <tr>
-                <td><input id="name" type="text" placeholder="name" required></td>
-                <td><input id="email" type="email" placeholder="email" required></td>
-            </tr>
-            <tr>
-                <td>Mobile</td>
-                <td>Place</td>
-            </tr>
-            <tr>
-                <td><input id="number" type="number"placeholder="number" required></td>
-                <td><input id="place" type="text" placeholder="place" required></td>
-            </tr>
-            <tr>
-                <td >Message</td>
-            </tr>
-            <tr>
-                <td colspan="3"><textarea id="message" placeholder="Type message here..." required></textarea></td>
-            </tr>
-        </table>
-            <button type="button" onclick="sendToWhatsapp()">Send</button>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="number">Mobile</label>
+                <input id="number" type="number" placeholder="number" required>
+            </div>
+            <div class="form-group">
+                <label for="place">Place</label>
+                <input id="place" type="text" placeholder="place" required>
+            </div>
+        </div>
 
-    </section>
-    <footer class="footer">
+        <div class="form-group full-width">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Type message here..." required></textarea>
+        </div>
+
+        <button type="button" onclick="sendToWhatsapp()">Send</button>
+    </div>
+</section>
+<footer class="footer">
     <div class="social-icons">
         <a href="#"><i class="bi bi-whatsapp"></i></i></a>
         <a href="#"><i class="bi bi-instagram"></i></a>
