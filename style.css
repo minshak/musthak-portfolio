@@ -185,8 +185,7 @@ nav ul li a:hover {
     color: #1f2937;
     margin: 0;
 }
-
-/* Expertise Layout */
+/* --- Expertise Layout --- */
 .expertise-title {
     font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 1.4rem;
@@ -203,13 +202,16 @@ nav ul li a:hover {
     font-weight: 500;
     color: #64748b;
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 4px; /* Slightly increased for better readability */
 }
 
-/* 2-Column Grid */
+/* --- Responsive Grid Layout --- */
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* Forces columns to break into a single column when screen width is tight,
+       while expanding smoothly up to 2 (or more) columns on larger viewports.
+    */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px 40px;
 }
 
@@ -219,8 +221,19 @@ nav ul li a:hover {
     font-weight: 700;
     color: #0f172a;
     margin: 0;
+    line-height: 1.4; /* Improves text wrapping presentation on small screens */
 }
 
+/* --- Optional Mobile Micro-adjustments --- */
+@media (max-width: 640px) {
+    .expertise-grid {
+        gap: 20px; /* Snugs up the spacing slightly on mobile */
+    }
+    
+    .expertise-title {
+        font-size: 1.25rem; /* Scales title down nicely for smaller displays */
+    }
+}
 /* Education section */
 
 #education {
@@ -575,7 +588,6 @@ nav ul li a:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08); 
 }
 /* GALLERY SECTION */
-/* --- Gallery Section General Styles --- */
 #gallery {
     padding: 60px 20px;
     max-width: 1200px;
